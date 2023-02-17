@@ -1,1 +1,0 @@
-# copilot-ocp-consumer
