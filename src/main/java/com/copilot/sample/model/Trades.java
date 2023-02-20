@@ -3,6 +3,8 @@ package com.copilot.sample.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import lombok.ToString;
 
 // fields are transaction, tradeid,buyer,seller,amount,currency,tradeDate,status

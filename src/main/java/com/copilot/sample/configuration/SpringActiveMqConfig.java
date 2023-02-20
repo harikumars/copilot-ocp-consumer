@@ -1,5 +1,7 @@
 package com.copilot.sample.configuration;
 
+import javax.jms.Queue;
+
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,27 +10,22 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.core.JmsTemplate;
 
-import javax.jms.Queue;
-
 @Configuration
 @EnableJms
 public class SpringActiveMqConfig {
-	
-	
+
 	@Value("${active-mq.broker-url}")
-    private String brokerUrl;
-	
-	
+	private String brokerUrl;
+
 	@Value("${active-mq.broker-url}")
-    private String userName;
-	
-	
+	private String userName;
+
 	@Value("${active-mq.broker-url}")
-    private String password;
-	
+	private String password;
+
 	@Value("${active-mq.queueName}")
-    private String queueName;
-	
+	private String queueName;
+
 	@Bean
 	public ActiveMQConnectionFactory activeMQConnectionFactory() {
 		ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory();
@@ -42,7 +39,7 @@ public class SpringActiveMqConfig {
 	public JmsTemplate jmsTemplate() {
 		JmsTemplate jmsTemplate = new JmsTemplate();
 		jmsTemplate.setConnectionFactory(activeMQConnectionFactory());
-		//jmsTemplate.setMessageConverter(messageConverter());
+		// jmsTemplate.setMessageConverter(messageConverter());
 		return jmsTemplate;
 	}
 
