@@ -14,6 +14,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.outputEncoding>UTF-8</project.build.outputEncoding>
+		<java.version>17</java.version>
 		<spring-cloud.version>2021.0.0</spring-cloud.version>
 	</properties>
 
